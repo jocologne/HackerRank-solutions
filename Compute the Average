@@ -1,0 +1,14 @@
+#!/bin/bash
+
+soma=0
+read n
+i=$n
+while [ $i -gt 0 ]; do
+    read num
+    soma=$((soma + num))
+    i=$((i - 1))
+done
+#echo "$soma"
+media=$(echo "scale=4; $soma / $n" | bc)
+rounded_result=$(printf "%.3f" "$media")
+echo "$rounded_result"
